@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block title %}Loan List{% endblock %}
+
+{% block content %}
+
+<h2>Loan List</h2>
+
+<ul>
+    {% for loan in loan %}
+    <li><h5>Loan ({{ loan.loanNum}})
+    <a href="{% url 'issuer_multi_view:loan_view' loan.loanNum %}">view</a>
+    <a href="{% url 'issuer_multi_view:loan_edit' loan.loanNum %}">edit</a>
+    <a href="{% url 'issuer_multi_view:loan_delete' loan.loanNum %}">delete</a>
+    </h5></li>
+    {% endfor %}
+</ul>
+{% endblock %}

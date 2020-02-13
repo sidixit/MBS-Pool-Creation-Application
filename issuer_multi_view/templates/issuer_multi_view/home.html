@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block title %}Issuer List{% endblock %}
+
+{% block content %}
+
+<h2>Issuer list</h2>
+
+<ul>
+    {% for issuer in issuer %}
+    <li><h5>({{ issuer.id }})  {{ issuer.name }}
+    <a href="{% url 'issuer_multi_view:issuer_view' issuer.id %}">view</a>
+    <a href="{% url 'issuer_multi_view:issuer_edit' issuer.id %}">edit</a>
+    <a href="{% url 'issuer_multi_view:issuer_delete' issuer.id %}">delete</a>
+    </h5></li>
+    {% endfor %}
+</ul>
+
+{% endblock %}
+<a href="{% url 'issuer_multi_view:issuer_new' %}">Sign up</a>

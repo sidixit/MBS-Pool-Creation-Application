@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h2>Loan</h2>
+<ul>
+    <li><h5>
+        Loan ID: {{ loan.loanNum }}
+        <br>
+        <br>
+        Pool ID: {{ loan.poolId}}
+        <br>
+        <br>
+        Issuer ID:{{ loan.issuerId}}
+        <br>
+        <br>
+        Activity Date: {{ loan.activityDate}}
+        <br>
+        <br>
+        Loan Interest Rate: {{ loan.loanInterestRate}}
+        <br>
+        <br>
+        Total Amount: {{loan.totalAmount}}
+        <br>
+        <br>
+        Outstanding Amount: {{loan.outstandingAmount}}
+        <br>
+        <br>
+        <a href="{% url 'issuer_multi_view:loan_edit' loan.loanNum %}">edit</a>
+        <a href="{% url 'issuer_multi_view:loan_delete' loan.loanNum %}">delete</a>
+    </h5></li>
+</ul>
+
+{% endblock %}

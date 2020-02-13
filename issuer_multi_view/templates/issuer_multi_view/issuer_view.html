@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+
+
+
+<h2>Issuer</h2>
+<ul>
+    <li><h5>
+        ID: {{ issuer.id }}
+        <br>
+        <br>
+        Name: {{ issuer.name}}
+        <br>
+        <br>
+         Email address:{{ issuer.email_address}}
+        <br>
+        <br>
+         Role: {{ issuer.initial_role}}
+        <br>
+        <br>
+         Company name: {{ issuer.company_name}}
+        <br>
+        <br>
+    </h5></li>
+    <li><h5>
+        <a href="{% url 'issuer_multi_view:issuer_edit' issuer.id %}">edit</a>
+        <a href="{% url 'issuer_multi_view:issuer_delete' issuer.id %}">delete</a>
+    </h5></li>
+</ul>
+
+{% endblock %}

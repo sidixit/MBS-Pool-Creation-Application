@@ -1,0 +1,9 @@
+<h2>
+<a href="{% url 'issuer_multi_view:home' %}">Application Home</a>
+{% if issuer %}
+&gt; <a href="{% url 'issuer_multi_view:issuer_view' issuer.id %}">{{ issuer.name }}</a>
+{% endif %}
+{% if title %}
+&gt; {{ title }}
+{% endif %}
+</h2>

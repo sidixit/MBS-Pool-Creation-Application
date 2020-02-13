@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block title %} Admin Home {% endblock %}
+
+{% block content %}
+
+<h2> Administrator Home</h2>
+
+<ul>
+
+    <li>
+    <a href="{% url 'issuer_multi_view:home' %}">Issuer list</a>
+    </li>
+    <br>
+    <br>
+    <li>
+    <a href="{% url 'issuer_multi_view:pool_home' %}">Pool list</a>
+    </li>
+</ul>
+
+{% endblock %}

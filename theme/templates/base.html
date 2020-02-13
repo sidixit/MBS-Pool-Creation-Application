@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<title>Finance1</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif; background-color: #e6e6e6}
+.w3-bar,h1,button {font-family: "Montserrat", sans-serif}
+.fa-anchor,.fa-coffee {font-size:200px}
+h4{padding: 1.5cm; line-height: 1.5;text-shadow: 2px 1px grey;}
+h5{padding: 0.5cm; line-height: 1.5; padding-left:0.5cm;word-spacing: 5px;}
+h2{text-align: center; padding:1cm;text-shadow: 2px 2px 5px grey;}
+h1{padding:2cm; color:red}
+div {margin: auto;width: 80%;clear: left;}
+
+</style>
+<body>
+
+<!-- Navbar -->
+<div class="w3-top">
+
+  <div class="w3-bar w3-blue w3-card-2 w3-left-align w3-large">
+    <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-red" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+    <a href="{% url 'home' %}" class="w3-bar-item w3-button w3-padding-large w3-white">Home</a>
+    <a href="http://harshit.gpbpx8igpb.us-west-2.elasticbeanstalk.com/assignAdmin/home" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Pool Transfer System</a>
+    <a href="{% url 'issuer_multi_view:admin_login' %}" class="w3-bar-item w3-button w3-padding-large w3-hover-white">Administrator Login</a>
+  </div>
+
+</div>
+<br>
+<br>
+<br>
+
+<div id="content">
+        {% block content %}{% endblock %}
+</div>
+</body>
+</html>
+
+<!-- Navbar on small screens -->
+  <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium w3-large">
+    <a href="{% url 'issuer_multi_view:home' %}" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Issuer Register</a>
+    <a href="{% url 'issuer_multi_view:pool_home' %}" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Loan System</a>
+  </div>

@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h2>Pool</h2>
+<ul>
+    <li><h5>
+        ID: {{ pool.id }}
+        <br>
+        <br>
+        Pool Type: {{ pool.poolType}}
+        <br>
+        <br>
+        Mortgage Interest Rate: {{ pool.mortgageInterstRate}}
+        <br>
+        <br>
+        Security Interest Rate: {{ pool.securityInterestRate}}
+        <br>
+        <br>
+        Issue Date: {{ pool.IssueDate}}
+        <br>
+        <br>
+        Maturity Date: {{ pool.maturityDate}}
+        <br>
+        <br>
+        Issuer ID: {{ pool.issuerId}}
+        <br>
+        <br>
+    </h5></li>
+</ul>
+
+<ul>
+        {% for loan in loan %}
+    <li><h5>
+        Loan ID: {{loan.loanNum}}
+        <br>
+        <br>
+        Pool ID: {{ loan.poolId}}
+        <br>
+        <br>
+        Issuer ID:{{ loan.issuerId}}
+        <br>
+        <br>
+        Activity Date: {{ loan.activityDate}}
+        <br>
+        <br>
+        Loan Interest Rate: {{ loan.loanInterestRate}}
+        <br>
+        <br>
+        Total Amount: {{loan.totalAmount}}
+        <br>
+        <br>
+        Outstanding Amount: {{loan.outstandingAmount}}
+        <br>
+        <br>
+        <a href="{% url 'issuer_multi_view:loan_edit' loan.loanNum %}">edit</a>
+        <a href="{% url 'issuer_multi_view:loan_delete' loan.loanNum %}">delete</a>
+    </h5></li>
+
+        {% endfor %}
+
+
+    <li><h5> <a href="{% url 'issuer_multi_view:pool_edit' pool.id %}">edit</a>
+        <a href="{% url 'issuer_multi_view:pool_delete' pool.id %}">delete</a>
+        <a href="{% url 'issuer_multi_view:loan_new'%}">create a new loan</a>
+    </h5>
+    </li>
+</ul>
+
+
+{% endblock %}

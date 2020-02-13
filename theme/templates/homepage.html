@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<!-- Header -->
+<header class="w3-container w3-black w3-center" style="padding:128px 16px">
+  <img src="http://18429-presscdn-0-68.pagely.netdna-cdn.com/wp-content/uploads/2016/07/CL_Loan-1.jpg" alt="Loan" style="width:100%">
+  <p class="w3-xxlarge">Welcome to MBS Pool Creation System!</p>
+  <a href="{% url 'issuer_multi_view:issuer_new' %}" class="w3-button w3-blue w3-padding-large w3-large w3-margin-top">Register Now</a>
+  <a href="{% url 'issuer_multi_view:issuer_login' %}" class="w3-button w3-blue w3-padding-large w3-large w3-margin-top">Issuer Login</a>
+</header>
+
+<script>
+// Used to toggle the menu on small screens when clicking on the menu button
+function myFunction() {
+    var x = document.getElementById("navDemo");
+    if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+    } else { 
+        x.className = x.className.replace(" w3-show", "");
+    }
+}
+</script>
+{% endblock %}

@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block title %}Pool List{% endblock %}
+
+{% block content %}
+
+<h2>Pool list</h2>
+
+<ul>
+    {% for pool in pools %}
+    <li><h5>Pool ({{ pool.id}})
+    <a href="{% url 'issuer_multi_view:pool_view' pool.id %}">view</a>
+    <a href="{% url 'issuer_multi_view:pool_edit' pool.id %}">edit</a>
+    <a href="{% url 'issuer_multi_view:pool_delete' pool.id %}">delete</a>
+    </h5></li>
+    {% endfor %}
+</ul>
+
+<a href="{% url 'issuer_multi_view:pool_new' %}">new pool</a>
+{% endblock %}
